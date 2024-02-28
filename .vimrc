@@ -23,3 +23,21 @@ set shiftwidth=4 " Number of spaces for indentation alteration"
 
 " set wildmenu
 
+set clipboard=unnamedplus " Use the system clipboard
+
+" move selected lines down (visual mode)
+xnoremap J :move '>+1<CR>gv=gv
+" move selected lines up (visual mode)
+xnoremap K :move '<-2<CR>gv=gv
+
+" Replace word under cursor
+vnoremap <leader>rs :s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nnoremap <leader>ra :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nnoremap <leader>rc :%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left><Left><Left>
+
+" Clear highlights"
+augroup SearchHighlight
+    autocmd!
+    autocmd CmdlineLeave /,\? :nnoremap <buffer> <Esc> :nohls<CR>
+    autocmd CmdlineChanged /,\? :nnoremap <buffer> <Esc> :nohls<CR>
+augroup END
