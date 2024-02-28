@@ -1,6 +1,9 @@
 " Enable syntx hilight
 syntax on
 
+" Disable vi compatibility for better experience
+set nocompatible
+
 " Put the cursor in the beggining of the line where it was when last opened
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -17,13 +20,15 @@ set mouse=a			" Enable mouse
 set autoindent
 set smartindent
 
-set tabstop=4 " Number of spaces a tab occupies visually"
-set shiftwidth=4 " Number of spaces for indentation alteration"
+set tabstop=4 " Number of spaces a tab occupies visually
+set shiftwidth=4 " Number of spaces for indentation alteration
 " set expandtab " converts tabs into spaces
 
 " set wildmenu
 
 set clipboard=unnamedplus " Use the system clipboard
+
+let mapleader = " "
 
 " move selected lines down (visual mode)
 xnoremap J :move '>+1<CR>gv=gv
@@ -35,7 +40,7 @@ vnoremap <leader>rs :s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <leader>ra :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <leader>rc :%s/\<<C-r><C-w>\>/<C-r><C-w>/gcI<Left><Left><Left><Left>
 
-" Clear highlights"
+" Clear highlights
 augroup SearchHighlight
     autocmd!
     autocmd CmdlineLeave /,\? :nnoremap <buffer> <Esc> :nohls<CR>
