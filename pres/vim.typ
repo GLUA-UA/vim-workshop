@@ -139,6 +139,31 @@
   ]
 ]
 
+#glua-slide("Vim enquanto IDE")[
+	Explicar por alto o que vamos fazer
+]
+
+#glua-slide("Gestão de plugins") [
+	- https://github.com/junegunn/vim-plug
+]
+
+#glua-slide("LSP") [
+	= O que é
+
+	Language Server Protocol (LSP) é ...
+
+	= Como configurar
+
+	- https://github.com/prabirshrestha/vim-lsp
+	- https://github.com/mattn/vim-lsp-settings
+
+	Ao abrir um ficheiro com uma extensão reconhecida, sugere-se o LSP adequado
+
+	NOTAS: 
+	- `clangd` tem de ser instalado à parte	
+	- LSP de python requer `python3.11-venv` (no Ubuntu)
+]
+
 #glua-slide("Outros")[
   Falar das outras coisas nas ideias 
 ]

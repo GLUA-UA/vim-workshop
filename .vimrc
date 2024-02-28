@@ -25,7 +25,7 @@ set shiftwidth=4 " Number of spaces for indentation alteration
 
 " set wildmenu
 
-set cursorline		" Hilight the current line
+" set cursorline		" Hilight the current line
 " set cursorcolumn	" Hilight the current line
 
 set mouse=a			" Enable mouse
@@ -49,3 +49,24 @@ augroup SearchHighlight
     autocmd CmdlineLeave /,\? :nnoremap <buffer> <Esc> :nohls<CR>
     autocmd CmdlineChanged /,\? :nnoremap <buffer> <Esc> :nohls<CR>
 augroup END
+
+" ===============================
+" Plugins
+" ===============================
+
+" Initialize vim-plug, leave neovim support for easier potential neovim migrations
+" On first run, use `:PlugInstall` to install the plugins, and from time to
+" time `:PlugUpdate` and `:PlugUpgrade` to update all the plugins and vim-plug
+" itself, respectively
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+" https://github.com/prabirshrestha/vim-lsp
+" LSP support
+Plug 'prabirshrestha/vim-lsp'
+
+" https://github.com/mattn/vim-lsp-settings
+" Easier setup of the LSPs
+Plug 'mattn/vim-lsp-settings'
+
+call plug#end()
+
