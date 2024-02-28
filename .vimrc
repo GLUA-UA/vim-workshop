@@ -14,7 +14,6 @@ set nu "rnu " line numbers
 
 set incsearch		" the search results apear as you type
 " set hlsearch		" hilight search results even after the search
-set mouse=a			" Enable mouse
 
 " Auto indentation
 set autoindent
@@ -26,6 +25,10 @@ set shiftwidth=4 " Number of spaces for indentation alteration
 
 " set wildmenu
 
+set cursorline		" Hilight the current line
+" set cursorcolumn	" Hilight the current line
+
+set mouse=a			" Enable mouse
 set clipboard=unnamedplus " Use the system clipboard
 
 let mapleader = " "
