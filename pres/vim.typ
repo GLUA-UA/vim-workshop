@@ -21,6 +21,7 @@
   - Vim
     - `:q` `:w` `:wq` `:q!`
     - `/`
+    - `Ctrl+o` `Ctrl+i`
     - `:s` `:%s` `:'<,'>s` `:#,#s`
       - exemplificar na forma superior de fazer endereçamento em C
     - `%`
