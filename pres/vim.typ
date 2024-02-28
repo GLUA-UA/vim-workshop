@@ -4,6 +4,7 @@
 
 #glua-title-slide("Workshop de Vim", ("Tiago Garcia", "João Felisberto"), subtitle: "Vem sem saber sair, vai sem motivo para o fazer")
 
+/*
 #glua-slide("Ideias")[
   - Introdução
     - Para quem é o Vim (termo de responsabilidade)
@@ -61,6 +62,7 @@
     - resolver um AoC
     - `gf` `gJ`
 ]
+*/
 
 #glua-slide("Introdução")[
   Isto é difícil de fazer blehhh
@@ -143,15 +145,17 @@
 	Explicar por alto o que vamos fazer
 ]
 
-#glua-slide("Gestão de plugins") [
+#glua-slide("Gestão de plugins")[
 	- https://github.com/junegunn/vim-plug
 ]
 
-#glua-slide("LSP") [
+#glua-slide("LSP")[
 	= O que é
 
 	Language Server Protocol (LSP) é ...
+]
 
+#glua-slide("LSP")[
 	= Como configurar
 
 	- https://github.com/prabirshrestha/vim-lsp
