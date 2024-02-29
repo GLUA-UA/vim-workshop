@@ -142,67 +142,77 @@
 ]
 
 #glua-slide("Vim enquanto IDE")[
-	Explicar por alto o que vamos fazer
+  Explicar por alto o que vamos fazer
 ]
 
 #glua-slide("Gestão de plugins")[
-	- https://github.com/junegunn/vim-plug
+  - https://github.com/junegunn/vim-plug
 ]
 
 #glua-slide("LSP")[
-	= O que é
+  = O que é
 
-	Language Server Protocol (LSP) é ...
+  Language Server Protocol (LSP) é ...
 ]
 
 #glua-slide("LSP")[
-	= Como configurar
+  = Como configurar
 
-	- https://github.com/prabirshrestha/vim-lsp
-	- https://github.com/mattn/vim-lsp-settings
+  - https://github.com/prabirshrestha/vim-lsp
+  - https://github.com/mattn/vim-lsp-settings
 
-	Ao abrir um ficheiro com uma extensão reconhecida, sugere-se o LSP adequado
+  Ao abrir um ficheiro com uma extensão reconhecida, sugere-se o LSP adequado
 
-	NOTAS: 
-	- `clangd` tem de ser instalado à parte	
-	- LSP de python requer `python3.11-venv` (no Ubuntu)
+  NOTAS: 
+  - `clangd` tem de ser instalado à parte	
+  - LSP de python requer `python3.11-venv` (no Ubuntu)
 ]
 
 #glua-slide("NERDTree")[
-	- https://github.com/preservim/nerdtree
-	- Plugin que mostra a árvore de diretórios dum modo mais legível.
-	
-	== Configurações
+  - https://github.com/preservim/nerdtree
+  - Plugin que mostra a árvore de diretórios dum modo mais legível.
 
-	- Abrir NERDTree quando se abre o Vim num diretório
-	- Fechar o Vim quando apenas o NERDTree está aberto
-	- Fechar tab quando apenas o NERDTree está aberto
-	- Abrir o NERDTree em cada tab
-	- Atalhos para abrir e fechar o NERDTree
+  == Configurações
+
+  - Abrir NERDTree quando se abre o Vim num diretório
+  - Fechar o Vim quando apenas o NERDTree está aberto
+  - Fechar tab quando apenas o NERDTree está aberto
+  - Abrir o NERDTree em cada tab
+  - Atalhos para abrir e fechar o NERDTree
 ]
 
 #glua-slide("Snippets")[
-	- https://github.com/SirVer/ultisnips
-	- https://github.com/honza/vim-snippets
+  - https://github.com/SirVer/ultisnips
+  - https://github.com/honza/vim-snippets
 
-	Dividida em 2 partes:
-	- _engine_ de snippets
-	- os snippets em si
+  Dividida em 2 partes:
+  - _engine_ de snippets
+  - os snippets em si
 ]
 
 #glua-slide("Code completion")[
-	- https://github.com/neoclide/coc.nvim
+  - https://github.com/neoclide/coc.nvim
 
-	Necessário instalar `nodejs` e `npm`.
+  Necessário instalar `nodejs` e `npm`.
 
-	Oferece sugestões de código, tal como numa IDE. 
+  Oferece sugestões de código, tal como numa IDE. 
 
-	Instalar suporte para _language servers_ com `:CocInstall <language server>`.
+  Instalar suporte para _language servers_ com `:CocInstall <language server>`.
 
-	Ver na [wiki](https://github.com/neoclide/coc.nvim/wiki/Language-servers)
+  Ver na [wiki](https://github.com/neoclide/coc.nvim/wiki/Language-servers)
 
-	- clangd
-	- coc-pyright
+  - clangd
+  - coc-pyright
+]
+
+#glua-slide("Temas")[
+  Cada tema opera como um plugin.
+
+  Comando `colorscheme <tema>` define tema.
+
+  Pode ser necessário usar `set termguicolors` para corrigir cores.
+
+  Vamos exemplificar com `Nord` e `OneDark`.
 ]
 
 #glua-slide("Outros")[

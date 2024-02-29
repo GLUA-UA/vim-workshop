@@ -1,4 +1,4 @@
-" Enable syntx hilight
+" Enable syntax hilight
 syntax on
 
 " Disable vi compatibility for better experience
@@ -85,6 +85,14 @@ Plug 'honza/vim-snippets'
 " Requires NodeJS and npm
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" https://github.com/joshdick/onedark.vim
+" One Dark theme
+Plug 'joshdick/onedark.vim'
+
+" https://www.nordtheme.com/docs/ports/vim/installation 
+" Nord theme
+Plug 'arcticicestudio/nord-vim'
+
 call plug#end()
 
 " ===============================
@@ -115,6 +123,18 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Some mappings for navigating the snippet
 let g:UltiSnipsExpandTrigger="<tab>"		" Tab to expand the snippet
-let g:UltiSnipsJumpForwardTrigger="<c-b>"	" Ctrl+B to move to the next field in the snippet
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"	" Ctrl+Z to move to the previous fiend in the snippet
+let g:UltiSnipsJumpForwardTrigger="<C-b>"	" Ctrl+B to move to the next field in the snippet
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"	" Ctrl+Z to move to the previous fiend in the snippet
+
+" ===============================
+" Color Schemes
+" ===============================
+
+" https://stackoverflow.com/a/64763678
+" Fix for background colors not updating on the nord theme
+set termguicolors
+
+" See https://vimcolorschemes.com/
+colorscheme onedark
+"colorscheme nord
 
