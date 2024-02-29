@@ -80,6 +80,11 @@ Plug 'SirVer/ultisnips'
 " Actual snippets
 Plug 'honza/vim-snippets'
 
+" https://github.com/neoclide/coc.nvim
+" Code completion
+" Requires NodeJS and npm
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 " ===============================

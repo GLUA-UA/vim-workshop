@@ -190,6 +190,21 @@
 	- os snippets em si
 ]
 
+#glua-slide("Code completion")[
+	- https://github.com/neoclide/coc.nvim
+
+	Necessário instalar `nodejs` e `npm`.
+
+	Oferece sugestões de código, tal como numa IDE. 
+
+	Instalar suporte para _language servers_ com `:CocInstall <language server>`.
+
+	Ver na [wiki](https://github.com/neoclide/coc.nvim/wiki/Language-servers)
+
+	- clangd
+	- coc-pyright
+]
+
 #glua-slide("Outros")[
 	Falar das outras coisas nas ideias 
 ]
