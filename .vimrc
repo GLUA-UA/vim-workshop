@@ -4,6 +4,9 @@ syntax on
 " Disable vi compatibility for better experience
 set nocompatible
 
+" Make vim update more often
+set updatetime=100
+
 " Put the cursor in the beggining of the line where it was when last opened
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -92,6 +95,10 @@ Plug 'joshdick/onedark.vim'
 " https://www.nordtheme.com/docs/ports/vim/installation 
 " Nord theme
 Plug 'arcticicestudio/nord-vim'
+
+" https://github.com/airblade/vim-gitgutter
+" Git integration
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 

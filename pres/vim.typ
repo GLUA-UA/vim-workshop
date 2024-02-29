@@ -215,6 +215,14 @@
   Vamos exemplificar com `Nord` e `OneDark`.
 ]
 
+#glua-slide("Git")[
+  - https://github.com/airblade/vim-gitgutter
+
+  Integra com repositórios git
+
+  Para uma experiência mais responsiva, `set updatetime=100`
+]
+
 #glua-slide("Outros")[
 	Falar das outras coisas nas ideias 
 ]
