@@ -72,6 +72,14 @@ Plug 'mattn/vim-lsp-settings'
 " To show the file tree
 Plug 'preservim/nerdtree'
 
+" https://github.com/SirVer/ultisnips
+" Snippet support
+Plug 'SirVer/ultisnips'
+
+" https://github.com/honza/vim-snippets
+" Actual snippets
+Plug 'honza/vim-snippets'
+
 call plug#end()
 
 " ===============================
@@ -95,4 +103,13 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " Toggle NerdTree
 inoremap <C-t> <ESC>:NERDTreeToggle<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" ===============================
+" Ultisnips
+" ===============================
+
+" Some mappings for navigating the snippet
+let g:UltiSnipsExpandTrigger="<tab>"		" Tab to expand the snippet
+let g:UltiSnipsJumpForwardTrigger="<c-b>"	" Ctrl+B to move to the next field in the snippet
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"	" Ctrl+Z to move to the previous fiend in the snippet
 

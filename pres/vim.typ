@@ -181,6 +181,15 @@
 	- Atalhos para abrir e fechar o NERDTree
 ]
 
+#glua-slide("Snippets")[
+	- https://github.com/SirVer/ultisnips
+	- https://github.com/honza/vim-snippets
+
+	Dividida em 2 partes:
+	- _engine_ de snippets
+	- os snippets em si
+]
+
 #glua-slide("Outros")[
 	Falar das outras coisas nas ideias 
 ]
