@@ -1,0 +1,83 @@
+%! Author = TiagoRG
+%! GitHub = https://github.com/TiagoRG
+
+\documentclass[15pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[portuguese]{babel}
+\usepackage[printonlyused]{acronym}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{setspace}
+\renewcommand{\familydefault}{\sfdefault}
+
+\geometry{
+    paper=a4paper,
+    margin=45pt,
+    includefoot
+}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+%%%%%% CAPA %%%%%%
+\begin{titlepage}
+    \begin{center}
+        \vspace*{40pt}
+        {\fontsize{5\textwidth}{0}\selectfont{\textbf{GUIA DE CONFIGRAÇÃO\\\vspace*{10pt}DO VIM/NEOVIM\\}}}
+        \large
+        \vspace*{60pt}
+        \includegraphics[width=0.48\textwidth]{logo}\\
+        \vspace*{60pt}
+        \Large
+        \textbf{
+            Núcleo do Grupo de Linux da Universidade de Aveiro\\
+            \vspace*{2pt}
+            da\\
+            \vspace*{2pt}
+            Associação de Electrónica, Telecomunicações\\e Telemática da Universidade de Aveiro\\
+        }
+    \end{center}
+\end{titlepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.1pt}
+\fancypagestyle{plain}{
+    \fancyhf{}% Clear header/footer
+    \fancyhead[L]{\includegraphics[width=0.20\textwidth]{logo_small}}
+    \fancyfoot[L]{Guia de Configuração de Vim/Neovim\\Grupo de Linux da Universidade de Aveiro}
+    \fancyfoot[C]{\\{\LARGE\thepage}}
+    \fancyfoot[R]{\href{https://tiagorg.pt}{Tiago Garcia}\\João Felisberto}
+}
+\pagestyle{plain}
+
+\renewcommand{\thechapter}{Capítulo \arabic{chapter}}
+\titleformat{\chapter}[display]{\bfseries}{\LARGE\thechapter}{1em}{\huge}
+\dottedcontents{chapter}[5.6em]{\bfseries\vspace{0.6em}}{5em}{0.65pc}
+
+\renewcommand{\thesection}{Tópico \arabic{chapter}.\arabic{section}}
+\titleformat{\section}[block]{\bfseries}{\Large\thesection}{1em}{\Large}
+\dottedcontents{section}[11.1em]{\vspace{0.6em}}{5.5em}{0.65pc}
+
+\renewcommand{\contentsname}{Índice}
+\tableofcontents
+\pagebreak
+
+\input{01-introducao}
+
+\end{document}
