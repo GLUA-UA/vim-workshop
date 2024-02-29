@@ -168,7 +168,20 @@
 	- LSP de python requer `python3.11-venv` (no Ubuntu)
 ]
 
+#glua-slide("NERDTree")[
+	- https://github.com/preservim/nerdtree
+	- Plugin que mostra a árvore de diretórios dum modo mais legível.
+	
+	== Configurações
+
+	- Abrir NERDTree quando se abre o Vim num diretório
+	- Fechar o Vim quando apenas o NERDTree está aberto
+	- Fechar tab quando apenas o NERDTree está aberto
+	- Abrir o NERDTree em cada tab
+	- Atalhos para abrir e fechar o NERDTree
+]
+
 #glua-slide("Outros")[
-  Falar das outras coisas nas ideias 
+	Falar das outras coisas nas ideias 
 ]
 
