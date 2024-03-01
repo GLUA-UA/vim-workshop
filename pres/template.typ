@@ -9,36 +9,38 @@
 #let conf(
   font: "DejaVu Sans", 
   raw-font: "Source Code Pro",
-  text-size: 25pt,
+  text-size: 18pt,
   doc
   ) = {
-  set page(
-    paper: "presentation-16-9",
-    fill: col_bg,
-    // header-ascent: 35%
-    margin: 10pt,
-  )
-  
-  set text(size: text-size, font: font)
-
-  set table(
-    inset: 8pt,
-    align: horizon,
-  )
-
-  show raw.where(block: false): r => {
-    box(
-      fill: col_raw_bg,// luma(245),
-      outset: (y: 5pt),
-      inset: (x: 5pt),
-      radius: 3pt,
-      text(
-        fill: col_raw_font, 
-        font: raw-font, 
-        r.text
-      ), 
-      // raw(lang: r.lang, r.text)
+    let margin = 30pt
+    set page(
+      paper: "presentation-16-9",
+      fill: col_bg,
+      // header-ascent: 35%
+      margin: (right: margin, bottom: margin, left: margin, top: 0pt),
+      //margin: 10pt,
     )
+    
+    set text(size: text-size, font: font)
+
+    set table(
+      inset: 8pt,
+      align: horizon,
+    )
+
+    show raw.where(block: false): r => {
+      box(
+        fill: col_raw_bg,// luma(245),
+        outset: (y: 5pt),
+        inset: (x: 5pt),
+        radius: 3pt,
+        text(
+          fill: col_raw_font, 
+          font: raw-font, 
+          r.text
+        ), 
+        // raw(lang: r.lang, r.text)
+      )
   }
 
   doc

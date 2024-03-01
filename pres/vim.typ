@@ -20,7 +20,7 @@
     - `u` `Ctrl+R`
     - `G` `gg` `<line>G`
   - Vim
-    - `:q` `:w` `:wq` `:q!`
+    - `:q` `:w` `:wq` `:q!` `Shift+Z+Z` `Shift+Z+Q` `:x`
     - `/`
     - `Ctrl+o` `Ctrl+i`
     - `:s` `:%s` `:'<,'>s` `:#,#s`
@@ -66,13 +66,18 @@
 
 #glua-slide("Introdução")[
   Isto é difícil de fazer blehhh
+
   == Editor modal
+
   - Normal `Esc`
   - Insert  `i`, `a`, `I`, `A`
   - Visual `v`, `Shift+v`, `Ctrl+v` 
 ]
 
 #glua-slide("Vim Motions")[
+  - O _modo vim_ pode ser usado na maioria dos editores.
+  - Traz o poder do vim à conveniência do editor em questão.
+
   #table(columns: 2)[
     `h`
   ][Esquerda][
@@ -102,7 +107,7 @@
   ][Fim do ficheiro]
 ]
 
-#glua-slide("Operações")[
+#glua-slide("Copiar e Colar")[
   == Forma Geral
   `[repetições] [movimento] comando`
 
@@ -113,32 +118,45 @@
     `p`][ Colar ][
     `d`, `x`][ Cortar ][
     `D`][ Cortar até ao fim da linha ][
-    `<ln>G`][ Ir para a linha `<ln>` ][
-  ]
+    `<ln>G`][ Ir para a linha `<ln>` ]
+  
 ]
 
 #glua-slide("Sair do Vim")[
+
+  \<Inserir memes aqui\>
+
   #table(columns: 2)[
     `:w`][ Guardar ][
     `:q`][ Sair ][
-    `:wq`][ Guardar e sair ][
-    `:q!`][ Sair sem guardar ][
-  ]
+    `:wq`, `ZZ`][ Guardar e sair ][
+    `:q!`, `ZQ`][ Sair sem guardar ]
+
 ]
 
 #glua-slide("Pesquisa e substituição")[
 
   == Forma Geral
-  `:<substituição>/<string inicial>/<string final>`
+  `:<substituição>/<string inicial>/<string final>/[modificadores]`
 
-  == Teclas
+  #grid(
+    columns: 2, 
+    column-gutter: 15pt,
+    [
+      == Teclas
 
-  #table(columns: 2)[
-    `:s`][ Substituir na linha ][
-    `:%s`][ Substituir no ficheiro ][
-    `:'<,'>s`][ Substituir em modo visual ][
-    `:#,#s`][ Substituir entre linhas ][
+      #table(columns: 2)[
+        `:s`][ Substituir na linha ][
+        `:%s`][ Substituir no ficheiro ][
+        `:'<,'>s`][ Substituir em modo visual ][
+        `:#,#s`][ Substituir entre linhas ]
+    ],[
+      == Modificadores
+
+      #table(columns: 2)[`g`][ Substituir todas as ocorrências na linha ] 
+    ],[
   ]
+)
 ]
 
 #glua-slide("Vim enquanto IDE")[
@@ -147,12 +165,21 @@
 
 #glua-slide("Gestão de plugins")[
   - https://github.com/junegunn/vim-plug
+  - Plugins podem ser geridos com um gestor de plugins.
+  - Podem ser instalados manualmente também
+  - `vim-plug` é o mais usado
 ]
 
 #glua-slide("LSP")[
   = O que é
 
-  Language Server Protocol (LSP) é ...
+  Language Server Protocol (LSP) é um protocolo que permite comunicar com um servidor que processa código e dá informação sobre ele.
+
+  - Verifica validade sintática
+  - Indica possíveis elementos sintáticos no contexto
+  - Dá erros e avisos
+
+  Por si só faz pouco, precisa do servidor e de um plugin para efetivamente dar as sugestões.
 ]
 
 #glua-slide("LSP")[
@@ -161,7 +188,7 @@
   - https://github.com/prabirshrestha/vim-lsp
   - https://github.com/mattn/vim-lsp-settings
 
-  Ao abrir um ficheiro com uma extensão reconhecida, sugere-se o LSP adequado
+  Ao abrir um ficheiro com uma extensão reconhecida, sugere-se o LSP adequado.
 
   NOTAS: 
   - `clangd` tem de ser instalado à parte	
@@ -195,11 +222,11 @@
 
   Necessário instalar `nodejs` e `npm`.
 
-  Oferece sugestões de código, tal como numa IDE. 
+  Oferece sugestões de código, tal como numa IDE, com base num LSP. 
 
   Instalar suporte para _language servers_ com `:CocInstall <language server>`.
 
-  Ver na [wiki](https://github.com/neoclide/coc.nvim/wiki/Language-servers)
+  Ver outros servidores na [wiki](https://github.com/neoclide/coc.nvim/wiki/Language-servers)
 
   - clangd
   - coc-pyright
@@ -221,9 +248,5 @@
   Integra com repositórios git
 
   Para uma experiência mais responsiva, `set updatetime=100`
-]
-
-#glua-slide("Outros")[
-	Falar das outras coisas nas ideias 
 ]
 
