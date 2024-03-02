@@ -26,7 +26,7 @@ set tabstop=4 " Number of spaces a tab occupies visually
 set shiftwidth=4 " Number of spaces for indentation alteration
 " set expandtab " converts tabs into spaces
 
-" set wildmenu
+set wildmenu
 
 " set cursorline		" Hilight the current line
 " set cursorcolumn	" Hilight the current line
@@ -142,6 +142,6 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"	" Ctrl+Z to move to the previous fien
 set termguicolors
 
 " See https://vimcolorschemes.com/
-colorscheme onedark
+"colorscheme onedark
 "colorscheme nord
 
