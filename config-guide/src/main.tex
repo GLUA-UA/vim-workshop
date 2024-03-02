@@ -40,18 +40,11 @@
     \begin{center}
         \vspace*{40pt}
         {\fontsize{5\textwidth}{0}\selectfont{\textbf{GUIA DE CONFIGRAÇÃO\\\vspace*{10pt}DO VIM/NEOVIM\\}}}
-        \large
-        \vspace*{60pt}
-        \includegraphics[width=0.48\textwidth]{logo}\\
-        \vspace*{60pt}
-        \Large
-        \textbf{
-            Núcleo do Grupo de Linux da Universidade de Aveiro\\
-            \vspace*{2pt}
-            da\\
-            \vspace*{2pt}
-            Associação de Electrónica, Telecomunicações\\e Telemática da Universidade de Aveiro\\
-        }
+        \vspace*{40pt}
+        \LARGE
+        \textbf{Grupo de Linux da Universidade de Aveiro}\\
+        \vspace*{80pt}
+        \includegraphics[width=0.5\textwidth]{logo}\\
     \end{center}
 \end{titlepage}
 
@@ -59,7 +52,7 @@
 \renewcommand{\footrulewidth}{0.1pt}
 \fancypagestyle{plain}{
     \fancyhf{}% Clear header/footer
-    \fancyhead[L]{\includegraphics[width=0.20\textwidth]{logo_small}}
+    % \fancyhead[L]{\includegraphics[width=0.20\textwidth]{logo_small}}
     \fancyfoot[L]{Guia de Configuração de Vim/Neovim\\Grupo de Linux da Universidade de Aveiro}
     \fancyfoot[C]{\\{\LARGE\thepage}}
     \fancyfoot[R]{\href{https://tiagorg.pt}{Tiago Garcia}\\João Felisberto}
@@ -67,7 +60,7 @@
 \pagestyle{plain}
 
 \renewcommand{\thechapter}{Capítulo \arabic{chapter}}
-\titleformat{\chapter}[display]{\bfseries}{\LARGE\thechapter}{1em}{\huge}
+\titleformat{\chapter}[display]{\centering\bfseries}{\LARGE\thechapter}{1em}{\huge}
 \dottedcontents{chapter}[5.6em]{\bfseries\vspace{0.6em}}{5em}{0.65pc}
 
 \renewcommand{\thesection}{Tópico \arabic{chapter}.\arabic{section}}
@@ -75,9 +68,13 @@
 \dottedcontents{section}[11.1em]{\vspace{0.6em}}{5.5em}{0.65pc}
 
 \renewcommand{\contentsname}{Índice}
+\begin{center}
 \tableofcontents
+\end{center}
 \pagebreak
 
 \input{01-introducao}
+\input{02-variaveis}
+\input{03-keymappings}
 
 \end{document}
