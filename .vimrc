@@ -109,7 +109,9 @@ Plug 'airblade/vim-gitgutter'
 
 " https://github.com/github/copilot.vim
 " GitHub Copilot integration
-Plug 'github/copilot.vim'
+" Requires vim >= 9.0.0185, which is neither available in the Ubuntu repositories nor in snap
+" To setup it up, just install it with PlugInstall and then run :Copilot setup
+" Plug 'github/copilot.vim'
 
 call plug#end()
 

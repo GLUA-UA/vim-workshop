@@ -1,3 +1,115 @@
 \chapter{Keymappings}
 \label{chap:keymappings}
 
+\section{Introdução}
+
+O Vim é um editor de texto que tem como objetivo ser o mais eficiente possível.\ Para isso, ele permite que o utilizador crie atalhos para todo o tipo de ações.
+
+Como o Vim é um editor de texto modal, os atalhos são diferentes em cada modo.\ Isto significa que, para uma mesma tecla, podemos definir diferentes ações para cada modo.
+
+\section{Modos}
+
+Os modos do Vim usados em mapeamentos são: Normal, Insert, Visual, Select, Operator-pending, Command-line e Terminal.
+
+Para representar os modos, usamos as seguintes abreviaturas:
+
+\begin{itemize}\label{itemize:map-modes}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
+    \item \texttt{n} para o modo Normal
+    \item \texttt{i} para o modo Insert
+    \item \texttt{v} para o modo Visual
+    \item \texttt{s} para o modo Select
+    \item \texttt{x} para o modos Visual e Select
+    \item \texttt{o} para o modo Operator-pending
+    \item \texttt{c} ou \texttt{l} para o modo Command-line
+    \item \texttt{t} para o modo Terminal
+\end{itemize}
+
+Nota: se não for especificada nenhuma abreviatura, o atalho ficará nos modos Normal, Visual, Select e Operator-pending.
+
+\section{Map vs Noremap}
+\label{sec:map-vs-noremap}
+
+Em Vim Script existem 2 formas de criar um atalho: \texttt{map} (ou \texttt{remap}) e \texttt{noremap}.
+
+O \texttt{map} representa mapeamento recursivo, ou seja, quando usado, o Vim irá expandir recursivamente qualquer mapeamento que seja acionado pela sequência de teclas mapeada. Isto significa que se a sequência de teclas mapeada acionar outro mapeamento, esse mapeamento será expandido quando usado \texttt{map}.\ Por outro lado, o \texttt{noremap} representa mapeamento não recursivo, ou seja, quando usado, o Vim não irá expandir recursivamente qualquer mapeamento que seja acionado pela sequência de teclas mapeada. Isto significa que se a sequência de teclas mapeada acionar outro mapeamento, esse mapeamento não será expandido quando usado \texttt{noremap}.
+
+Geralmente, usa-se \texttt{noremap} para mapeamentos no geral e \texttt{map} para alias.
+
+Por exemplo:
+
+\begin{lstlisting}
+:map j gg     " move o cursor para a primeira linha
+:map Q j      " move o cursor para a primeira linha
+:noremap W j  " move o cursor uma linha abaixo
+\end{lstlisting}
+
+Neste caso, \texttt{j} vai ser mapeado para \texttt{gg} e \texttt{Q} vai ser mapeado para \texttt{j}.\ Uma vez que \texttt{j} foi mapeado para \texttt{gg}, \texttt{Q} vai ser mapeado para \texttt{gg} uma vez que foi mapeado de forma recursiva.\ Por outro lado, \texttt{W} vai ser mapeado para \texttt{j} e não para \texttt{gg} uma vez que foi mapeado de forma não recursiva.
+
+\section{Opções de Mapeamento}
+\label{sec:map-extra-options}
+
+As opções de mapeamento são especificadas entre \texttt{<} e \texttt{>} e podem ser usadas em qualquer ordem.
+
+Existem as seguintes opções de mapeamento:
+
+\begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
+    \item \texttt{silent} suprime a exibição do comando sendo executado
+    \item \texttt{expr} especifica que a função do mapeamento é uma expressão a ser avaliada
+    \item \texttt{unique} especifica que o mapeamento não deve ser remapeado se já existir
+    \item \texttt{script} especifica que o mapeamento deve ser local ao script onde é definido
+    \item \texttt{nowait} especifica que o mapeamento não deve esperar que outros mapeamentos sejam concluídos
+    \item \texttt{special} especifica que o mapeamento deve ser acionado por teclas especiais
+    \item \texttt{cmd} especifica que a função do mapeamento é um comando a ser executado
+    \item \texttt{args} especifica que o mapeamento deve aceitar argumentos
+    \item \texttt{buffer} especifica que o mapeamento se aplica apenas ao buffer atual
+\end{itemize}
+
+\section{Sintaxe de Mapeamento}
+
+\subsection{Vim Script}
+
+Em Vim Script, os mapeamentos são feitos na forma:
+
+\begin{lstlisting}
+<mode>[nore]map[!] [options] <command> <function>
+\end{lstlisting}
+
+Onde:
+
+\begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
+    \item \texttt{<mode>} é o modo para o qual o mapeamento se aplica, devendo ser usada uma das abreviaturas listadas em \ref{itemize:map-modes}
+    \item \texttt{[nore]} é opcional e indica se o mapeamento é recursivo ou não, tal como explicado em \ref{sec:map-vs-noremap}
+    \item \texttt{[!]} é opcional e indica que o mapeamento deve substituir qualquer mapeamento existente para a mesma sequência de teclas
+    \item \texttt{<command>} é a sequência de teclas que aciona o mapeamento
+    \item \texttt{<function>} é a função a ser executado quando a sequência de teclas é acionada, que pode ser uma outra sequência de teclas, um comando ou uma função
+    \item \texttt{[options]} são as opções adicionais referidas em \ref{sec:map-extra-options}, que deverão estar entre \texttt{<} e \texttt{>}
+\end{itemize}
+
+Exemplo:
+
+\begin{lstlisting}
+nnoremap <silent> <F5> :echo "Hello, World!"<CR>
+\end{lstlisting}
+
+\subsection{Lua}
+
+Em Lua, os mapeamentos são feitos na forma:
+
+\begin{lstlisting}
+vim.keymap.set({"<mode1>", "<mode2>", ...}, "<command>", "<function>",
+                {<option1> = <value1>, <option2> = <value2>, ...})
+\end{lstlisting}
+
+Em lua, os modos são passados como um set de strings, o mesmo mapeamento pode ser atribuido a vários modos numa única linha.\ Utilizando apenas 1 modo, não é necessário usar \{ \}.
+
+A diferenciação entre \texttt{map} e \texttt{noremap} é feita através de uma opção adicional.
+
+O equivalente ao exemplo apresentado em Vim Script:
+
+\begin{lstlisting}
+vim.keymap.set("n", "<F5>", "<cmd>echo Hello, World!<CR>", {noremap = true, silent = true})
+\end{lstlisting}
+
