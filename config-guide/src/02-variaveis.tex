@@ -1,9 +1,9 @@
 \chapter{Variáveis}
 \label{chap:variaveis}
 
-\section{Lista Completa de Variáveis}
+\section{Introdução}
 
-Esta lista pode ser verificada usando o command \texttt{:options} no Vim.\ Para mais detalhes sobre cada variável, usar \texttt{:help option-name}.
+As variáveis apresentadas aqui são apenas aquelas consideradas mais importantes e mais usadas, a lista completa pode ser obtida usando o command \texttt{:options} no Vim.\ Para mais detalhes sobre cada variável, usar \texttt{:help option-name}.
 
 Estas variáveis podem ser alteradas de duas formas: temporariamente (apenas para a sessão atual) ou permanentemente (para todas as sessões futuras).\ Para alterar temporariamente, usar \texttt{:set var=value}.\ Para alterar permanentemente, é necessário editar os ficheiros de configuração, em Vim Script ou Lua (para o Neovim).
 
@@ -11,18 +11,18 @@ Estas variáveis podem ser alteradas de duas formas: temporariamente (apenas par
 
 Em Vim Script, as variáveis são alteradas usando o comando \texttt{set}.
 
-\begin{verbatim}
+\begin{lstlisting}
     set var=value
-\end{verbatim}
+\end{lstlisting}
 
 Exemplo:
 
-\begin{verbatim}
+\begin{lstlisting}
     set number
     " set nonumber
     set numberwidth=3
     set colorcolumn=80
-\end{verbatim}
+\end{lstlisting}
 
 Nota: O caracter \texttt{"} é usado para comentários em Vim Script.
 
@@ -30,25 +30,26 @@ Nota: O caracter \texttt{"} é usado para comentários em Vim Script.
 
 Para o Neovim, em Lua, as variáveis são alteradas usando o comando \texttt{vim.opt}.
 
-\begin{verbatim}
+\begin{lstlisting}
     vim.opt.var = value
-\end{verbatim}
+\end{lstlisting}
 
 Exemplo:
 
-\begin{verbatim}
+\begin{lstlisting}
     vim.opt.number = true
     -- vim.opt.number = false
     vim.opt.numberwidth = 3
     vim.opt.colorcolumn = "80"
-\end{verbatim}
+\end{lstlisting}
 
-Nota 1: Há certos valores que são números mas que têm de ser passados como strings.\ Exemplo: \texttt{vim.opt.colorcolumn = "80"}.
+\noindent Nota 1: Há valores que são números mas que são passados como strings.\ Exemplo: \texttt{vim.opt.colorcolumn = "80"}.\\
 Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
 
 \section{Interface}
 
 \begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
     \item \texttt{mouse} Ativa o rato.\ Uso: \texttt{set mouse=mode}, onde \texttt{mode} pode ser \texttt{a} (todos os modos), \texttt{n}, \texttt{v}, \texttt{i}.
     \item \texttt{scroll} Número de linhas a saltar ao usar \texttt{Ctrl-D} e \texttt{Ctrl-U}.\ Uso: \texttt{set scroll=n}.
     \item \texttt{scrolloff} Número de linhas a mostrar acima e abaixo do cursor ao dar scroll.\ Uso: \texttt{set scrolloff=n}.
@@ -64,6 +65,7 @@ Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
 \section{Procura}
 
 \begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
     \item \texttt{incsearch} Mostra resultados para procura parcial.\ Sempre que se procura por um padrão, o Vim mostra os resultados à medida que se escreve o padrão.\ Uso: \texttt{set incsearch}.
     \item \texttt{ignorecase} Ignora capitalização na procura.\ Uso: \texttt{set ignorecase}.
     \item \texttt{smartcase} Ignora capitalização na procura, a menos que o padrão use maiúsculas.\ Uso: \texttt{set smartcase}.
@@ -72,6 +74,7 @@ Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
 \section{Sintaxe e Realce}
 
 \begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
     \item \texttt{background} Cor de fundo.\ Uso: \texttt{set background=dark} ou \texttt{set background=light}.
     \item \texttt{termguicolors} Ativa cores verdadeiras.\ Uso: \texttt{set termguicolors}.
     \item \texttt{syntax} Ativa a sintaxe.\ Uso: \texttt{set syntax=ON}.
@@ -85,6 +88,7 @@ Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
 \section{Mensagens e Informações}
 
 \begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
     \item \texttt{showcmd} Mostra comandos (keys) na linha de estado.\ Uso: \texttt{set showcmd}.
     \item \texttt{showmode} Mostra o modo na linha de estado.\ Uso: \texttt{set showmode}.
     \item \texttt{ruler} Mostra a posição do cursor na linha de estado.\ Uso: \texttt{set ruler}.
@@ -97,6 +101,7 @@ Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
 \section{Seleção e Área de Transferência}
 
 \begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
     \item \texttt{selection} Comportamento de seleção.\ Uso: \texttt{set selection=mode}, onde \texttt{mode} pode ser \texttt{inclusive}, \texttt{exclusive} ou \texttt{old}.
     \item \texttt{selectmode} Modo de seleção.\ Uso: \texttt{set selectmode=mode}, onde \texttt{mode} pode ser \texttt{"mouse"}, \texttt{"key"} ou \texttt{"cmd"}.
     \item \texttt{clipboard} Área de transferência.\ Uso: \texttt{set clipboard=mode}.\\Para usar o clipboard do sistema usar \texttt{set clipboard+=unnamedplus}.
@@ -105,6 +110,7 @@ Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
 \section{Edição}
 
 \begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
     \item \texttt{undolevels} Número máximo de mudanças a guardar.\ Uso: \texttt{set ul=n}.
     \item \texttt{undodir} Diretório para guardar histório de mudanças.\ Uso: \texttt{set undodir=directory}.
     \item \texttt{dictionary} Dicionário para correção ortográfica.\ Uso: \texttt{set dictionary=filename}.
@@ -115,6 +121,7 @@ Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
 \section{Indentação}
 
 \begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
     \item \texttt{tabstop} Número de espaços por tabulação.\ Uso: \texttt{set tabstop=n}.
     \item \texttt{shiftwidth} Número de espaços por nível de indentação.\ Uso: \texttt{set shiftwidth=n}.
     \item \texttt{expandtab} Usa espaços em vez de tabulações.\ Uso: \texttt{set expandtab}.
@@ -125,6 +132,7 @@ Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
 \section{Comandos}
 
 \begin{itemize}
+    \setlength{\itemsep}{-5pt} % Adjust the value as needed
     \item \texttt{history} Número de comandos a guardar.\ Uso: \texttt{set history=n}.
     \item \texttt{wildmenu} Ativa o menu de autocompletar.\ Uso: \texttt{set wildmenu}.
     \item \texttt{wildmode} Comportamento de autocompletar.\ Uso: \texttt{set wildmode=mode}.

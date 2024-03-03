@@ -32,7 +32,21 @@
     margin=45pt,
     includefoot
 }
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
+\lstset{
+    basicstyle=\fontfamily{pcr}\selectfont\small,
+    keywordstyle=\color{Blue}\bfseries, % style for keywords
+    numbers=left, % where to put the line-numbers
+    numberstyle=\tiny, % the size of the fonts that are used for the line-numbers
+    showspaces=false, % show spaces adding particular underscores
+    showstringspaces=false, % underline spaces within strings
+    showtabs=false, % show tabs within strings adding particular underscores
+    frame=single, % adds a frame around the code
+    tabsize=4, % sets default tabsize to 2 spaces
+    captionpos=b, % sets the caption-position to bottom
+    breaklines=false, % sets automatic line breaking
+    breakatwhitespace=false,
+}
 
 \begin{document}
 %%%%%% CAPA %%%%%%
@@ -61,11 +75,12 @@
 
 \renewcommand{\thechapter}{Capítulo \arabic{chapter}}
 \titleformat{\chapter}[display]{\centering\bfseries}{\LARGE\thechapter}{1em}{\huge}
-\dottedcontents{chapter}[5.6em]{\bfseries\vspace{0.6em}}{5em}{0.65pc}
+\dottedcontents{chapter}[5.75em]{\bfseries\vspace{0.6em}}{5em}{0.65pc}
 
 \renewcommand{\thesection}{Tópico \arabic{chapter}.\arabic{section}}
 \titleformat{\section}[block]{\bfseries}{\Large\thesection}{1em}{\Large}
-\dottedcontents{section}[11.1em]{\vspace{0.6em}}{5.5em}{0.65pc}
+\dottedcontents{section}[11.1em]{\vspace{0.6em}}{5.3em}{0.65pc}
+\dottedcontents{subsection}[17.15em]{\vspace{0.6em}}{6.05em}{0.65pc}
 
 \renewcommand{\contentsname}{Índice}
 \begin{center}
