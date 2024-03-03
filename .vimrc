@@ -107,6 +107,10 @@ Plug 'arcticicestudio/nord-vim'
 " Git integration
 Plug 'airblade/vim-gitgutter'
 
+" https://github.com/github/copilot.vim
+" GitHub Copilot integration
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 " ===============================
@@ -151,4 +155,3 @@ set termguicolors
 " See https://vimcolorschemes.com/
 "colorscheme onedark
 "colorscheme nord
-

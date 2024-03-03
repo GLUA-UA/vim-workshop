@@ -1,0 +1,134 @@
+\chapter{Variáveis}
+\label{chap:variaveis}
+
+\section{Lista Completa de Variáveis}
+
+Esta lista pode ser verificada usando o command \texttt{:options} no Vim.\ Para mais detalhes sobre cada variável, usar \texttt{:help option-name}.
+
+Estas variáveis podem ser alteradas de duas formas: temporariamente (apenas para a sessão atual) ou permanentemente (para todas as sessões futuras).\ Para alterar temporariamente, usar \texttt{:set var=value}.\ Para alterar permanentemente, é necessário editar os ficheiros de configuração, em Vim Script ou Lua (para o Neovim).
+
+\subsection*{Vim Script}
+
+Em Vim Script, as variáveis são alteradas usando o comando \texttt{set}.
+
+\begin{verbatim}
+    set var=value
+\end{verbatim}
+
+Exemplo:
+
+\begin{verbatim}
+    set number
+    " set nonumber
+    set numberwidth=3
+    set colorcolumn=80
+\end{verbatim}
+
+Nota: O caracter \texttt{"} é usado para comentários em Vim Script.
+
+\subsection*{Lua}
+
+Para o Neovim, em Lua, as variáveis são alteradas usando o comando \texttt{vim.opt}.
+
+\begin{verbatim}
+    vim.opt.var = value
+\end{verbatim}
+
+Exemplo:
+
+\begin{verbatim}
+    vim.opt.number = true
+    -- vim.opt.number = false
+    vim.opt.numberwidth = 3
+    vim.opt.colorcolumn = "80"
+\end{verbatim}
+
+Nota 1: Há certos valores que são números mas que têm de ser passados como strings.\ Exemplo: \texttt{vim.opt.colorcolumn = "80"}.
+Nota 2: O caracter \texttt{-} usado duas vezes representa comentários em Lua.
+
+\section{Interface}
+
+\begin{itemize}
+    \item \texttt{mouse} Ativa o rato.\ Uso: \texttt{set mouse=mode}, onde \texttt{mode} pode ser \texttt{a} (todos os modos), \texttt{n}, \texttt{v}, \texttt{i}.
+    \item \texttt{scroll} Número de linhas a saltar ao usar \texttt{Ctrl-D} e \texttt{Ctrl-U}.\ Uso: \texttt{set scroll=n}.
+    \item \texttt{scrolloff} Número de linhas a mostrar acima e abaixo do cursor ao dar scroll.\ Uso: \texttt{set scrolloff=n}.
+    \item \texttt{wrap} Ativa ou desativa a quebra de linhas.\ Uso: \texttt{set wrap}.
+    \item \texttt{breakindent} Mantém a indentação ao quebrar linhas.\ Uso: \texttt{set breakindent}.
+    \item \texttt{number} Mostra números de linha.\ Uso: \texttt{set number}.
+    \item \texttt{relativenumber} Mostra números de linha relativos.\ Uso: \texttt{set relativenumber}.
+    \item \texttt{numberwidth} Largura dos números de linha.\ Uso: \texttt{set numberwidth=n}.
+    \item \texttt{signcolumn} Mostra coluna de sinais.\ Uso: \texttt{set signcolumn=mode}, onde \texttt{mode} pode ser \texttt{yes}, \texttt{no} ou \texttt{auto}.
+    \item \texttt{fillchars} Caracteres usados na linha de estado e nas linhas de folding e filling.\ Uso: \texttt{set fcs=str}.
+\end{itemize}
+
+\section{Procura}
+
+\begin{itemize}
+    \item \texttt{incsearch} Mostra resultados para procura parcial.\ Sempre que se procura por um padrão, o Vim mostra os resultados à medida que se escreve o padrão.\ Uso: \texttt{set incsearch}.
+    \item \texttt{ignorecase} Ignora capitalização na procura.\ Uso: \texttt{set ignorecase}.
+    \item \texttt{smartcase} Ignora capitalização na procura, a menos que o padrão use maiúsculas.\ Uso: \texttt{set smartcase}.
+\end{itemize}
+
+\section{Sintaxe e Realce}
+
+\begin{itemize}
+    \item \texttt{background} Cor de fundo.\ Uso: \texttt{set background=dark} ou \texttt{set background=light}.
+    \item \texttt{termguicolors} Ativa cores verdadeiras.\ Uso: \texttt{set termguicolors}.
+    \item \texttt{syntax} Ativa a sintaxe.\ Uso: \texttt{set syntax=ON}.
+    \item \texttt{cursorline} Realça a linha onde está o cursor.\ Uso: \texttt{set cursorline}.
+    \item \texttt{colorcolumn} Coluna(s) a realçar.\ Uso: \texttt{set colorcolumn=n} ou \texttt{set colorcolumn=n,...}.
+    \item \texttt{hlsearch} Realça resultados da procura.\ Uso: \texttt{set hlsearch}.\ Para desativar, usar \texttt{:nohls}.
+    \item \texttt{lazyredraw} Evita highlighting durante macros.\ Uso: \texttt{set lz}.
+    \item \texttt{redrawtime} Tempo de espera para desativar highlighting.\ Uso: \texttt{set redrawtime=n}.
+\end{itemize}
+
+\section{Mensagens e Informações}
+
+\begin{itemize}
+    \item \texttt{showcmd} Mostra comandos (keys) na linha de estado.\ Uso: \texttt{set showcmd}.
+    \item \texttt{showmode} Mostra o modo na linha de estado.\ Uso: \texttt{set showmode}.
+    \item \texttt{ruler} Mostra a posição do cursor na linha de estado.\ Uso: \texttt{set ruler}.
+    \item \texttt{laststatus} Mostra a linha de estado.\ Uso: \texttt{set laststatus=n}, onde \texttt{n} pode ser 0, 1 ou 2.
+    \item \texttt{report} Número de linhas a mostrar na linha de estado.\ Uso: \texttt{set report=n}.
+    \item \texttt{verbose} Nível de detalhe das mensagens.\ Uso: \texttt{set verbose=n}.
+    \item \texttt{verbosefile} Ficheiro para mensagens verbosas.\ Uso: \texttt{set verbosefile=filename}.
+\end{itemize}
+
+\section{Seleção e Área de Transferência}
+
+\begin{itemize}
+    \item \texttt{selection} Comportamento de seleção.\ Uso: \texttt{set selection=mode}, onde \texttt{mode} pode ser \texttt{inclusive}, \texttt{exclusive} ou \texttt{old}.
+    \item \texttt{selectmode} Modo de seleção.\ Uso: \texttt{set selectmode=mode}, onde \texttt{mode} pode ser \texttt{"mouse"}, \texttt{"key"} ou \texttt{"cmd"}.
+    \item \texttt{clipboard} Área de transferência.\ Uso: \texttt{set clipboard=mode}.\\Para usar o clipboard do sistema usar \texttt{set clipboard+=unnamedplus}.
+\end{itemize}
+
+\section{Edição}
+
+\begin{itemize}
+    \item \texttt{undolevels} Número máximo de mudanças a guardar.\ Uso: \texttt{set ul=n}.
+    \item \texttt{undodir} Diretório para guardar histório de mudanças.\ Uso: \texttt{set undodir=directory}.
+    \item \texttt{dictionary} Dicionário para correção ortográfica.\ Uso: \texttt{set dictionary=filename}.
+    \item \texttt{matchpairs} Pares de caracteres a realçar.\ Uso: \texttt{set matchpairs+=<:>}.
+    \item \texttt{nrformats} Formatos de números reconhecidos por `Ctrl-A` e `Ctrl-X`.\\Uso: \texttt{set nrformats=alpha,bin,octal,hex,unsigned}.
+\end{itemize}
+
+\section{Indentação}
+
+\begin{itemize}
+    \item \texttt{tabstop} Número de espaços por tabulação.\ Uso: \texttt{set tabstop=n}.
+    \item \texttt{shiftwidth} Número de espaços por nível de indentação.\ Uso: \texttt{set shiftwidth=n}.
+    \item \texttt{expandtab} Usa espaços em vez de tabulações.\ Uso: \texttt{set expandtab}.
+    \item \texttt{smartindent} Ativa a indentação inteligente.\ Uso: \texttt{set smartindent}.
+    \item \texttt{autoindent} Ativa a indentação automática.\ Uso: \texttt{set autoindent}.
+\end{itemize}
+
+\section{Comandos}
+
+\begin{itemize}
+    \item \texttt{history} Número de comandos a guardar.\ Uso: \texttt{set history=n}.
+    \item \texttt{wildmenu} Ativa o menu de autocompletar.\ Uso: \texttt{set wildmenu}.
+    \item \texttt{wildmode} Comportamento de autocompletar.\ Uso: \texttt{set wildmode=mode}.
+    \item \texttt{wildchar} Caracteres usados para autocompletar.\ Uso: \texttt{set wildchar=char}.
+    \item \texttt{shell} Shell a usar para comandos do sistema.\ Uso: \texttt{set shell=sh}.
+\end{itemize}
+
