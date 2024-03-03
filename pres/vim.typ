@@ -69,10 +69,13 @@
 
   == Editor modal
 
-  - Normal `Esc`
-  - Insert  `i`, `a`, `o`, `I`, `A`, `O`
-  - Visual `v`, `Shift+v`, `Ctrl+v` 
+  #table(columns: 2,
+    [Normal], [`Esc`],
+    [Insert],  [`i` `a` `o` `I` `A` `O`],
+    [Visual], [`v` `Shift+v` `Ctrl+v`],
+  )
 ]
+
 
 #glua-slide("Vim Motions")[
   - O _modo vim_ pode ser usado na maioria dos editores.
@@ -136,7 +139,7 @@
 
 #glua-slide("Sair do Vim")[
 
-  \<Inserir memes aqui\>
+  == Top 7 coisas para fazer em Vim:
 
   #table(columns: 2)[
     `:w`][ Guardar ][
@@ -151,8 +154,8 @@
     [`?`],[Procura no sentido contrário],
     [`n`],[Vai para o próximo resultado],
     [`N`],[Vai para o resultado anterior],
-    [`#`],[Vai para a próxima ocorrência da palavra no cursor],
-    [`*`],[Vai para a ocorrência anterior da palavra no cursor],
+    [`#`],[Próxima ocorrência da palavra no cursor],
+    [`*`],[Ocorrência anterior da palavra no cursor],
   )
 ]
 
@@ -217,12 +220,10 @@
 ]
 
 #glua-slide("Configurar Vim")[
-  Ver Vim
+  Demonstração
 ]
 
 #glua-slide("Vim enquanto IDE")[
-  Explicar por alto o que vamos fazer
-
   - Plugins
   - Temas
   - Explorador de ficheiros
@@ -244,7 +245,7 @@
 ]
 
 #glua-slide("Temas")[
-  - Vim tem vários temas, selecionáveis com `colorscheme`
+  - Vim vem com vários temas, selecionáveis com `colorscheme`
   - Cada tema opera como um plugin.
   - Comando `colorscheme <tema>` define tema.
   - Pode ser necessário usar `set termguicolors` para corrigir cores.
@@ -264,6 +265,7 @@
   - Atalhos para abrir e fechar o NERDTree
 
   == Keybinds
+
   #table(columns: 2,
     [`i`],[Abre o ficheiro acima do atual],
     [`s`],[Abre o ficheiro à direita do atual],
@@ -272,7 +274,7 @@
 ]
 
 #glua-slide("LSP")[
-  = O que é
+  == O que é
 
   Language Server Protocol (LSP) é um protocolo que permite comunicar com um servidor que processa código e dá informação sobre ele.
 
@@ -284,7 +286,7 @@
 ]
 
 #glua-slide("LSP")[
-  = Como configurar
+  == Como configurar
 
   - https://github.com/prabirshrestha/vim-lsp
   - https://github.com/mattn/vim-lsp-settings
