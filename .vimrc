@@ -4,6 +4,13 @@ syntax on
 " Disable vi compatibility for better experience
 set nocompatible
 
+" Fix backspace WHEN NOT USING `$HOME/.vimrc`
+" By default vim's backspace does not behave as intended, distribution
+" maintainers fix it by adding this line to `defaults.vim`
+" This should not be an issue in ubuntu when using the default vimrc location
+" See https://stackoverflow.com/a/11560415
+set backspace=indent,eol,start
+
 " Make vim update more often
 set updatetime=100
 
