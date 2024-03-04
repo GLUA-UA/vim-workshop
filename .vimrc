@@ -33,7 +33,7 @@ set tabstop=4 " Number of spaces a tab occupies visually
 set shiftwidth=4 " Number of spaces for indentation alteration
 " set expandtab " converts tabs into spaces
 
-set wildmenu
+set wildmenu " show all available options for a command
 
 " set cursorline		" Hilight the current line
 " set cursorcolumn	" Hilight the current line

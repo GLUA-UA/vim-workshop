@@ -65,8 +65,6 @@
 */
 
 #glua-slide("Introdução")[
-  Isto é difícil de fazer blehhh
-
   == Editor modal
 
   #table(columns: 2,
@@ -138,9 +136,6 @@
 ]
 
 #glua-slide("Sair do Vim")[
-
-  == Top 7 coisas para fazer em Vim:
-
   #table(columns: 2)[
     `:w`][ Guardar ][
     `:q`][ Sair ][
@@ -194,10 +189,19 @@
   )
 ]
 
-#glua-slide("Modo visual")[
+#glua-slide("Modo visual e indentação")[
   #table(columns: 2,
     [`Ctrl+v+<I/A>`],[Insere o texto escrito em cada linha *depois de carregar no ESC*],
-    [`v<i/a><<([{)>`],[Cria a seleção dentro/à volta dos parentesis utilizados]
+    [`v<i/a><<([{>`],[Cria a seleção dentro/à volta dos parentesis utilizados],
+    [`[n]<`],[Diminui a indentação `n` vezes],
+    [`[n]>`],[Aumenta a indentação `n` vezes],
+    [`=`],[Indenta a seleção],
+  )
+
+  #table(columns: 2,
+    [`[n]<<`],[Diminui a indentação da linha atual `n` vezes],
+    [`[n]>>`],[Aumenta a indentação da linha atual `n` vezes],
+    [`==`],[Indenta a seleção],
   )
 ]
 
@@ -231,10 +235,6 @@
   - Snippets
   - Completions
   - Git
-
-  *FALTA*
-  - usages
-  - copilot
 ]
 
 #glua-slide("Gestão de plugins")[
