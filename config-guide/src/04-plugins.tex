@@ -1,0 +1,29 @@
+\chapter{Plugins}
+\label{chap:plugins}
+
+\section{Vim}
+
+Para facilitar a usabilidade e atualização dos plugins, são usados plugin managers para fazer essa gestão automaticamente.
+
+O mais comum no Vim é o Vim-Plug. Para instalar o Vim-Plug basta executar o seguinte commando:
+
+\begin{lstlisting}
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \textbackslash
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+\end{lstlisting}
+
+Para adicionar plugins, adicionam-se o repositório (normalmente do GitHub) do plugin ao vimrc com a seguinte linha:
+
+\begin{lstlisting}
+Plug 'repo-owner/repo-name'
+\end{lstlisting}
+
+Depois disto, para instalar os plugins, é necessário correr o comando \texttt{:PlugInstall} dentro do Vim.
+
+Para atualizar e instalar os plugins em falta, usa-se \texttt{:PlugUpdate}.
+
+Existem ainda outros comandos que podem ser vistos na página do GitHub do Vim-Plug.
+
+Para configurar os plugins, basta adicionar as configurações ao vimrc.\ As configurações podem ser vistas na página do GitHub do plugin em questão.
+
+Para uma configuração de exemplo, veja o vimrc no repositório \href{https://github.com/GLUA-UA/vim-workshop/blob/master/.vimrc}{GLUA-UA/vim-workshop}.

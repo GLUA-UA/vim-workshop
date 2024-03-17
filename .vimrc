@@ -22,8 +22,8 @@ set nu "rnu " line numbers
 "set ignorecase		" Case insensitive matches
 "set smartcase		" Only use case sensitive search when there are capital letters
 
-set incsearch		" the search results apear as you type
-" set hlsearch		" hilight search results even after the search
+set incsearch		" the search results appear as you type
+" set hlsearch		" highlight search results even after the search
 
 " Auto indentation
 set autoindent
@@ -36,7 +36,8 @@ set shiftwidth=4 " Number of spaces for indentation alteration
 set wildmenu " show all available options for a command
 
 " set cursorline		" Hilight the current line
-" set cursorcolumn	" Hilight the current line
+" set cursorcolumn	" Hilight the current column
+" set colorcolumn=80	" Show a line at the 80th column
 
 set mouse=a			" Enable mouse
 set clipboard=unnamedplus " Use the system clipboard
